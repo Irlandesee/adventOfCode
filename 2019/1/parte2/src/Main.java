@@ -44,8 +44,8 @@ public class Main{
 		int sum = s.calculate_Module_SumFuelRequirements();
 		System.out.println("Sum: "+sum);
 		System.out.println();
-		int totalFuelRequired = s.calculate_Fuel_SumFuel();
-		System.out.println("Total Fuel required:  " +totalFuelRequired);
-
+		
+		int totalFuelRequiredModuleFuel = s.calculateTotalFuelRequired();
+		System.out.println("Total fuel required by module and fuel: "+totalFuelRequiredModuleFuel);
 	}
 }
