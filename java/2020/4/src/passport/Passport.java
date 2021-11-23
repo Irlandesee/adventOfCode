@@ -8,9 +8,6 @@ public class Passport{
 	private HashMap<String, String> passport;
 	private boolean valid;
 
-	private final String[] keys = 
-		{"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid", "cid"};
-
 	public Passport(HashMap<String, String> readPassport){
 		this.passport = readPassport;
 	}
