@@ -39,3 +39,15 @@ FFFBBBFRRR: row 14, column 7, seat ID 119.
 BBFFBBFRLL: row 102, column 4, seat ID 820.
 
 As a sanity check, look through your list of boarding passes. What is the highest seat ID on a boarding pass?
+
+# notes
+example string = "FBFBBFFRLR"
+String length = 10
+first 7 chars = "FBFBBFF" -> Either F or B
+last 3 chars = "RLR"-> Either R or L
+
+i = 0, range = [0, 127]
+i = 1, F(lower half), range = [0, 63]
+i = 2, B(upper half), range = [32, 63]
+i = 3, F(lower half), range = [32, 47] -> 
+
