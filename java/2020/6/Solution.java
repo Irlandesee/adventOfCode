@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -25,35 +26,31 @@ public class Solution{
 
 	private static LinkedList<Group> divideInputIntoGroups(LinkedList<String> input){
 		System.out.println("Dividing into groups");
-		LinkedList<Group> res = new LinkedList<Group>();
-		LinkedList<String> answers = new LinkedList<String>();
-		Group g = new Group();
-		for(String s : input){
-			if(!s.equals("")){
-				System.out.printf("adding {%s} to asnwers\n", s);
-				answers.add(s);
+		Iterator it =  input.iterator();
+		LinkedList<Group> groups = new LinkedList<Group>();
+		LinkedList<String> l = new LinkedList<String>();
+
+		while(it.hasNext()){
+			String s = it.next().toString();
+			if(s.equals("")){
+				LinkedList<String> answers = new LinkedList<String>();
+				for(String x : l)
+					answers.add(x);
+				groups.add(new Group(answers));
+				l.clear();
 			}
-			else{
-				System.out.println("Creating new group");
-				LinkedList<String> tmp = answers;
-				g.setAnswers(tmp);
-				res.add(g);
-				System.out.println("---newly added group");
-				Group t = res.get(res.size()-1);
-				t.printGroup();
-				System.out.printf("res size: %d\n", res.size());
-				answers.clear();
-			}
+			else
+				l.add(s);
 		}
 
-		return res;
+		return groups;
 	}
 
 	public static void main(String[] args){
 		String inputFile = "testcase.txt";
 		LinkedList<String> input = readInput(inputFile);
-
 		LinkedList<Group> groups = divideInputIntoGroups(input);
+		
 		
 		
 		
