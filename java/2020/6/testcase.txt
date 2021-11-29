@@ -2,17 +2,4 @@ abcx
 abcy
 abcz
 
-abc
 
-a
-b
-c
-
-ab
-ac
-
-aa
-a
-a
-
-b

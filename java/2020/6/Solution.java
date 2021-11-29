@@ -47,12 +47,15 @@ public class Solution{
 	}
 
 	public static void main(String[] args){
-		String inputFile = "testcase.txt";
+		String inputFile = "input.txt";
 		LinkedList<String> input = readInput(inputFile);
 		LinkedList<Group> groups = divideInputIntoGroups(input);
 		
+		int answers = 0;
+		for(Group g : groups){
+			answers += g.getNumberOfUniqueAnswers();
+		}
 		
-		
-		
+		System.out.println(answers);
 	}
 }

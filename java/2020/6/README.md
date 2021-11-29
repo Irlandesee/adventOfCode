@@ -24,7 +24,7 @@ c
 ab
 ac
 
-aa
+a
 a
 a
 
