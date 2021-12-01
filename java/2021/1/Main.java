@@ -55,7 +55,12 @@ public class Main{
 
 		int countPartTwo = 0;
 		
-
+		for(int i = 3; i < numbers.size(); i++){
+			if((numbers.get(i-3) + numbers.get(i-2) + numbers.get(i-1))
+				< (numbers.get(i) + numbers.get(i-2) + numbers.get(i-1))){
+				countPartTwo++;
+			}
+		}
 
 		System.out.println("Counts part two: "+countPartTwo);
 		
