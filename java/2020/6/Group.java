@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Arrays;
@@ -10,6 +11,7 @@ public class Group{
 	private char lastLetter;
 	private int groupLength;
 	private int numbeOfUniqueAnswers;
+	private int numberOfCommonAnswers;
 
 	public Group(){
 		
@@ -21,6 +23,7 @@ public class Group{
 		this.uniqueAnswers = new char[alphabet.length]; //at most 
 		this.exec();
 		this.uniqueAnswersPartOne();
+		this.commonAnswersPartTwo();
 	}
 
 	public LinkedList<String> getAnswers(){
@@ -33,6 +36,10 @@ public class Group{
 
 	public int getNumberOfUniqueAnswers(){
 		return this.numbeOfUniqueAnswers;
+	}
+
+	public int getNumberOfCommonAnswers(){
+		return this.numberOfCommonAnswers;
 	}
 
 	private void exec(){
@@ -70,8 +77,19 @@ public class Group{
 		
 	}
 
-	private void uniqueAnswersPartTwo(){
+	private void commonAnswersPartTwo(){
 		
+		int count = 0;
+
+		char[][] matrix = new char[answers.size()][alphabet.length];
+		for(int i = 0; i < answers.size(); i++)
+			matrix[i] = answers.get(i).toCharArray();
+		
+
+		System.out.println(count);
+		System.out.println("------------");
+		this.numberOfCommonAnswers = count;
+
 	}
 
 	public void printGroup(){
