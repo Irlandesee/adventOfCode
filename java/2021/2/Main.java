@@ -17,6 +17,7 @@ public class Main{
 				Direction d = new Direction(tmp[0], Integer.parseInt(tmp[1]));
 				res.add(d);
 			} 
+			bReader.close();
 		}catch(IOException e){
 			e.printStackTrace();
 		}
