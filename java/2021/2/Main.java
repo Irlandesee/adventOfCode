@@ -24,7 +24,7 @@ public class Main{
 		return res;
 	}
 
-	private static long movePartOne(long tmp, Direction d){
+	private static long move(long tmp, Direction d){
 		if(d.getDirection().equals("up"))
 			return (tmp -= d.getLength());
 		else
@@ -52,9 +52,9 @@ public class Main{
 
 		for(Direction d : directions){
 			if(d.getDirection().equals("forward"))
-				pos_x = movePartOne(pos_x, d);
+				pos_x = move(pos_x, d);
 			else{
-				pos_y = movePartOne(pos_y, d);
+				pos_y = move(pos_y, d);
 			}
 		}
 		long horizontalPosPartOne = calHorizonalPos(pos_x, pos_y);
@@ -67,15 +67,15 @@ public class Main{
 		for(Direction d : directions){
 			if(d.getDirection().equals("forward")){
 				if(aim == 0){
-					pos_x = movePartOne(pos_x, d);
+					pos_x = move(pos_x, d);
 				}
 				else{
-					pos_x = movePartOne(pos_x, d);
+					pos_x = move(pos_x, d);
 					depth = increaseDepth(depth, aim, d.getLength());
 				}
 			}
 			else{
-				aim = movePartOne(aim, d);
+				aim = move(aim, d);
 			}
 		}
 		System.out.printf("pos_x: %d\npos_y: %d\ndepth: %d\naim: %d\n", pos_x, pos_y, depth, aim);
