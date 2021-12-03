@@ -141,10 +141,6 @@ public class Main{
 						for(int j = 0; j < zeroes.size(); j++)
 							tmp.add(zeroes.get(j));
 					}
-					else if(count_zero ==  count_one){
-						for(int j = 0; j < ones.size(); j++)
-							tmp.add(ones.get(j));
-					}
 					else{
 						for(int j = 0; j < ones.size(); j++)
 							tmp.add(ones.get(j));
@@ -154,10 +150,6 @@ public class Main{
 					if(count_zero < count_one){
 						for(int j = 0; j < zeroes.size(); j++)
 							tmp.add(zeroes.get(j));
-					}
-					else if(count_zero == count_one){
-						for(int j = 0; j < zeroes.size(); j++)
-							tmp.add(zeroes.get(j));	
 					}
 					else{
 						for(int j = 0; j < ones.size(); j++)
